@@ -13,46 +13,53 @@
       margin: 0;
       text-align: center;
       font-family: Arial, sans-serif;
+      background: #fff8f0;
+      color: #333;
     }
 
     .container {
       padding: 20px;
+      max-width: 600px;
     }
 
     .photos img {
-      max-width: 200px;
+      max-width: 250px;
       margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    .music, .counter {
+    .music {
       margin-top: 20px;
+    }
+
+    .counter {
+      margin-top: 30px;
+      font-size: 1.5em;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <!-- Player do YouTube -->
-  <div style="text-align: center; margin: 20px 0;">
-    <iframe width="300" height="80"
-      src="https://www.youtube.com/embed/j5t4fwWAHL4?autoplay=1&loop=1&playlist=j5t4fwWAHL4"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
-
   <div class="container">
     <h1>Felipe e Julia 💑</h1>
 
     <div class="photos">
-      <img src="foto1.jpg" alt="Foto 1">
-      <img src="foto2.jpg" alt="Foto 2">
+      <img src="IMG_0706.jpg" alt="Foto 1">
+      <img src="IMG_0708.jpg" alt="Foto 2">
     </div>
 
     <p class="message">Cada segundo ao seu lado é especial. Te amo, Julia! 💗</p>
 
     <div class="music">
-      <iframe width="350" height="200" src="https://www.youtube.com/embed/bGV8-6xQ2N4" frameborder="0" allowfullscreen></iframe>
+      <!-- Player do YouTube com autoplay e loop -->
+      <iframe width="350" height="200"
+        src="https://www.youtube.com/embed/j5t4fwWAHL4?autoplay=1&loop=1&playlist=j5t4fwWAHL4"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
     </div>
 
     <div class="counter">
@@ -61,6 +68,30 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function atualizarCronometro() {
+      const inicio = new Date('2024-03-25T00:00:00');
+      const agora = new Date();
+      let diff = agora - inicio;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      diff -= dias * (1000 * 60 * 60 * 24);
+
+      const horas = Math.floor(diff / (1000 * 60 * 60));
+      diff -= horas * (1000 * 60 * 60);
+
+      const minutos = Math.floor(diff / (1000 * 60));
+      diff -= minutos * (1000 * 60);
+
+      const segundos = Math.floor(diff / 1000);
+
+      document.getElementById('timer').textContent =
+        `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+    }
+
+    // Atualiza o cronômetro a cada segundo
+    setInterval(atualizarCronometro, 1000);
+    atualizarCronometro(); // Atualiza assim que carrega
+  </script>
 </body>
 </html>
