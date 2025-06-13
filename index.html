@@ -14,21 +14,30 @@
       text-align: center;
       font-family: Arial, sans-serif;
     }
+
+    .container {
+      padding: 20px;
+    }
+
+    .photos img {
+      max-width: 200px;
+      margin: 10px;
+    }
+
+    .music, .counter {
+      margin-top: 20px;
+    }
   </style>
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Player do YouTube centralizado -->
- <div style="text-align: center; margin: 20px 0;">
-  <iframe width="560" height="315"
-    src="https://www.youtube.com/embed/j5t4fwWAHL4?autoplay=1&loop=1&playlist=j5t4fwWAHL4"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-</div>
-
+  <!-- Player do YouTube -->
+  <div style="text-align: center; margin: 20px 0;">
+    <iframe width="300" height="80"
+      src="https://www.youtube.com/embed/j5t4fwWAHL4?autoplay=1&loop=1&playlist=j5t4fwWAHL4"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
     </iframe>
   </div>
 
@@ -36,13 +45,15 @@
     <h1>Felipe e Julia 💑</h1>
 
     <div class="photos">
-      <img src="foto1.jpg" alt="Foto 1" />
-      <img src="foto2.jpg" alt="Foto 2" />
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
     </div>
 
     <p class="message">Cada segundo ao seu lado é especial. Te amo, Julia! 💗</p>
 
-    <!-- Removi o player duplicado daqui -->
+    <div class="music">
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/bGV8-6xQ2N4" frameborder="0" allowfullscreen></iframe>
+    </div>
 
     <div class="counter">
       <h2>Estamos juntos há:</h2>
